@@ -8,6 +8,7 @@
   <div class="hero-bottom">
     <div class="byline">
       Precision. Depth. Design. <em>Solypsa</em>
+      
     </div>
     <div class="content">
       <div class="text">
@@ -17,9 +18,9 @@
         </p> -->
       </div>
       <div class="links">
-        <a href="/hifi">Hi‑FI</a>
+        <a href="/hifi">Hi‑FI →</a>
         
-        <a href="/pro">PRO</a>
+        <a href="/pro">PRO →</a>
       </div>
     </div>
   </div>
@@ -80,12 +81,14 @@
     min-width: 280px;
   }
 
+  
+
   .links {
   display: flex;
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
 }

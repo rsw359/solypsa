@@ -1,5 +1,5 @@
 <script>
-  import Home from '$lib/components/Home.svelte';
+  import Home from './home/+page.svelte';
   import { onMount } from 'svelte';
 
   let scrolled = false;

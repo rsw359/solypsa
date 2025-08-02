@@ -5,28 +5,7 @@
 <Header />
 
 <!-- Hero Section -->
-<section class="hero">
-  <div class="intro-wrapper">
-    <div class="intro-text">
-      <h1>Precision. Depth. Design <em>Solypsa</em></h1>
-      <p>
-        At Solypsa, we bring analog excellence into focus through carefully curated
-        audio equipment and thoughtful design. We believe in the power of sound to
-        transform spaces and experiences.
-      </p>
-      <p>
-        Full service audio distribution, system design and installation. Also comprehensive
-        calibration of your existing turntable / tonearm / cartridge. Best of class tools and years of experience.
-      </p>
 
-      <nav class="nav">
-        <a href="#NNNN">NNNN →</a>
-        <a href="#ppp">Ethos →</a>
-        <a href="/contact">Contact →</a>
-      </nav>
-    </div>
-  </div>
-</section>
 
 <!-- NNNN Section -->
 <section id="NNNN">
@@ -40,18 +19,18 @@
         performance per size areas. Oh and in his spare time putting together ultimate systems for ETF…
       </p>
 
-       <nav class="nav">
-        <a href="#NNNN">Comium →</a>
-        <a href="#ppp">Devor →</a>
-        <a href="/contact">Trent →</a>
-        <a href="/contact">OJAS x NNNN →</a>
-      </nav>
+       <!-- <nav class="nav">
+        <a href="#comium">Comium →</a>
+        <a href="#devor">Devor →</a>
+        <a href="#trent">Trent →</a>
+        <a href="#ojas">OJAS x NNNN →</a>
+      </nav> -->
     </div>
   </div>
 
   <div class="container">
     <!-- Comium 30 -->
-    <div class="text">
+    <div class="text" id="comium">
       <h3>Comium 30</h3>
       <p>
         Designed to mount directly to a wall (or even ceiling) less than 5″ deep. Bringing true mastering monitor
@@ -68,7 +47,7 @@
     </div>
 
     <!-- Devor -->
-    <div class="text">
+    <div class="text" id="devor">
       <h3>Devor 40/30/23/160</h3>
       <p>
         The horn loaded Devor subwoofer models feature extra low distortion and a sub cardioid dispersion pattern, both
@@ -82,7 +61,7 @@
     </div>
 
     <!-- Trent -->
-    <div class="text">
+    <div class="text" id="trent">
       <h3>Trent 35/25</h3>
       <p>
         Small footprint, mighty capable. Transmission line loaded subwoofer (12″ or 18″) with omni dispersion pattern.
@@ -97,7 +76,7 @@
     </div>
 
     <!-- Ojas x NNNN -->
-    <div class="text">
+    <div class="text" id="ojas">
       <h3>Ojas x NNNN ON series 5</h3>
       <p>
         Four modern reimaginations of the classic large format speaker system, at home in the most demanding audiophile
@@ -110,20 +89,6 @@
         <img src="/ON2.png" alt="ON2" />
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Ethos Section -->
-<section id="ppp">
-  <div class="container">
-    <div class="text text-section">
-      <h2>Lorem ipsum dolor sit amet</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
-        dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-      </p>
-    </div>
-    <div class="image"><!-- Add your image here if needed --></div>
   </div>
 </section>
 
@@ -142,38 +107,26 @@
   }
 
   /* Hero Section */
-  .hero {
-    padding: 6rem 2rem 4rem;
-    display: flex;
-    justify-content: center;
-    background-color: #eef1f2;
-  }
-
-  .intro-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
 
   .intro-text {
     max-width: 600px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
+    margin-bottom: 5rem;
   }
 
-  .nav {
+  /* .nav {
     display: flex;
     gap: 1rem;
     margin: 1rem 0 3rem;
     justify-content: center;
+    
   }
 
   .nav a {
     text-decoration: none;
     color: black;
-  }
+  } */
 
   /* Product Section */
   .product-wrapper {
@@ -182,6 +135,7 @@
     padding: 0 2rem;
     display: flex;
     justify-content: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   section {
@@ -202,20 +156,21 @@
     flex: 1 1 400px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
+   
   }
 
-  .text-section {
+  /* .text-section {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 2rem;
-  }
+  } */
 
   .image-gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem;
-    padding-bottom: 100px;
+    margin-top: 10rem;
+    /* padding-bottom: 50px; */
   }
 
   .image-gallery img {
@@ -234,6 +189,7 @@
   .image-gallery.single {
     justify-content: center;
     padding-bottom: 100px;
+    
   }
 
   .image-gallery.single img {

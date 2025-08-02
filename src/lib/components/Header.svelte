@@ -15,14 +15,27 @@
 </script>
 
 <nav class="header">
-  <div class="left">
+  <div class="left"><a href="/home">
+  
     <img id="logo-sm" src="/dark1.png" alt="">
+  </a>
   </div>
 
   <div class="center">
-    <a href="/pro">Pro →</a>
-    <a href="/ethos">Ethos →</a>
+    <a href="/nnnn">NNNN →</a>
+    <a href="/ethos">RADA →</a>
+    <a href="/contact">Audio Creative →</a>
+  </div>
+  <div class="center">
+    <a href="/pro">STST →</a>
+    <a href="/ethos">Primary Control→</a>
     <a href="/contact">Contact →</a>
+  </div>
+
+  <div class="center">
+    <a href="/pro">Ethos →</a>
+    <a href="/ethos">Contact →</a>
+    
   </div>
 
   <div class="right">
