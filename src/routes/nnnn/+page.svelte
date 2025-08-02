@@ -204,11 +204,7 @@
     margin-bottom: 1rem;
   }
 
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
+  
 
   h3 {
     font-size: 1.5rem;
@@ -224,8 +220,7 @@
 
   /* Responsive Styles */
   @media (max-width: 768px) {
-    .hero,
-    .intro-wrapper,
+    
     .product-wrapper,
     .container {
       flex-direction: column;
@@ -252,9 +247,7 @@
       font-size: 2rem;
     }
 
-    h2 {
-      font-size: 1.5rem;
-    }
+    
   }
 </style>
 

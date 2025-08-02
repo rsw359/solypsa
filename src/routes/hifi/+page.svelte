@@ -19,33 +19,46 @@
         calibration of your existing turntable / tonearm / cartridge. Best of class tools and years of experience.
       </p>
 
-      <nav class="nav">
+      <!-- <nav class="nav">
         <a href="#NNNN">NNNN →</a>
         <a href="#ppp">Ethos →</a>
         <a href="/contact">Contact →</a>
-      </nav>
+      </nav> -->
     </div>
   </div>
 </section>
 
 <!-- NNNN Section -->
-<section id="NNNN">
+<section id="Services">
   <div class="product-wrapper">
     <div class="intro-text">
-      <h1>NNNN Loudspeakers</h1>
+      <h1>Services</h1>
+      <h3>We Offer:</h3>
       <p>
-        NNNN hail from Oslo. What happens when some of the smartest people in audio put together a loudspeaker company?
-        You get speakers that break the mold. They manage to truly stride across HiFi and Professional requirements
-        smashing expectations along the way. Rune Skramstad, CTO, happens to be pushing the envelope in horn loading and
-        performance per size areas. Oh and in his spare time putting together ultimate systems for ETF…
+        → Full service audio distribution, system design and installation.     
+      </p>
+           
+      <p>
+        → Comprehensive calibration of your existing turntable / tonearm / cartridge. 
+      </p>
+      <p>
+        → Best in class tools and years of experience.
+      </p>
+      <p>
+        See turntable calibration page for details
+      </p>
+      <p>
+        We only carry lines from passionate designer/builders that can offer the trifecta of superb performance, value, and artisanal production.
+
+        Our lines are built with care, often by hand, always with a dedication to the craft. As a result there is often some time needed to create upon order.
       </p>
 
-       <nav class="nav">
+       <!-- <nav class="nav">
         <a href="#NNNN">Comium →</a>
         <a href="#ppp">Devor →</a>
         <a href="/contact">Trent →</a>
         <a href="/contact">OJAS x NNNN →</a>
-      </nav>
+      </nav> -->
     </div>
   </div>
 
@@ -129,177 +142,174 @@
 
 
 <style>
-  :global(html) {
-    scroll-behavior: smooth;
-  }
+  /* ========== Global Styles ========== */
+:global(html) {
+  scroll-behavior: smooth;
+}
 
-  :global(body) {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #eef1f2;
-    color: #222;
-    line-height: 1.5;
-  }
+:global(body) {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #eef1f2;
+  color: #222;
+  line-height: 1.5;
+}
 
-  /* Hero Section */
-  .hero {
-    padding: 6rem 2rem 4rem;
-    display: flex;
-    justify-content: center;
-    background-color: #eef1f2;
-  }
+/* ========== Typography ========== */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
-  .intro-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
 
-  .intro-text {
-    max-width: 600px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 300;
-  }
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+}
 
-  .nav {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0 3rem;
-    justify-content: center;
-  }
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
 
-  .nav a {
-    text-decoration: none;
-    color: black;
-  }
+/* ========== Layout Sections ========== */
+section {
+  padding: 4rem 2rem;
+}
 
-  /* Product Section */
-  .product-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: flex-end;
-  }
+section#Services {
+  padding-top: 2rem; /* tighten space from previous section */
+}
 
-  section {
-    padding: 4rem 2rem;
-  }
+/* ========== Hero Section ========== */
+.hero {
+  padding: 6rem 2rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: #eef1f2;
+}
 
+.intro-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  max-width: 700px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  padding-bottom: 2rem; /* Add space between text and bottom border */
+}
+
+/* ========== Product Section ========== */
+.product-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text {
+  flex: 1 1 400px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+}
+
+.text-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+}
+
+/* ========== Image Galleries ========== */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 100px;
+}
+
+.image-gallery img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.image-gallery.single {
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.image-gallery.single img {
+  max-width: 400px;
+  cursor: default;
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .hero,
+  .intro-wrapper,
+  .product-wrapper,
   .container {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: center;
   }
 
+  .intro-text,
   .text {
-    flex: 1 1 400px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 300;
+    text-align: center;
   }
 
-  .text-section {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding-top: 2rem;
-  }
-
-  .image-gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-bottom: 100px;
-  }
-
-  .image-gallery img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .image-gallery img:hover {
-    transform: scale(1.05);
-  }
-
+  .image-gallery,
   .image-gallery.single {
     justify-content: center;
-    padding-bottom: 100px;
   }
 
+  .image-gallery img,
   .image-gallery.single img {
-    max-width: 400px;
-    cursor: default;
+    max-width: 90%;
   }
 
-  /* Headings */
   h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
 
   h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  h3 {
     font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 2rem;
   }
+}
 
-  p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    max-width: 600px;
-  }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero,
-    .intro-wrapper,
-    .product-wrapper,
-    .container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .intro-text,
-    .text {
-      text-align: center;
-    }
-
-    .image-gallery,
-    .image-gallery.single {
-      justify-content: center;
-    }
-
-    .image-gallery img,
-    .image-gallery.single img {
-      max-width: 90%;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
 </style>
 
 

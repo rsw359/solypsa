@@ -33,7 +33,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000;
+    /* background-color: #000; */
   }
 
   .hero {
@@ -59,7 +59,7 @@
   }
 
   .hero-bottom {
-    height: 25vh; /* remaining height */
+    height: 30vh; /* remaining height */
     background-color: #111;
     color: white;
     padding: 1rem 1.5rem;
