@@ -311,6 +311,7 @@
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    background-color: #eef1f2;
   }
   .lb-close {
     position: absolute;

@@ -19,14 +19,14 @@
 </script>
 
 <nav class="header">
-  <div class="left"><a href="/home">
+  <div class="left"><a href="/">
   
-    <img id="logo-sm" src="/dark1.png" alt="">
+    <img id="logo-sm" src="/dark1.png" alt="logo">
   </a>
   </div>
 
   <div class="center">
-    <a href="/home">Home →</a>
+    <a href="/">Home →</a>
     <a href="/hifi">HI-FI →</a>
     
   </div>
@@ -101,6 +101,12 @@
 
   .time {
     font-weight: bold;
+  }
+
+  #logo-sm {
+  height: 50px;
+  background: transparent important!;  /* ensure no background */
+  display: block;            /* prevents inline spacing glitches */
   }
 
   

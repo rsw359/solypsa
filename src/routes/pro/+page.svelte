@@ -97,18 +97,24 @@
 
 {#if lbOpen}
   <div
-    class="lb-backdrop"
+    class="lb-root"
     role="dialog"
     aria-modal="true"
     aria-label="Image viewer"
-    tabindex="0"
-    on:click={closeLB}
-    on:keydown={onBackdropKey}
   >
+    <!-- Backdrop is a real button (no self-closing tag) -->
+    <button
+      class="lb-backdrop"
+      type="button"
+      aria-label="Close image viewer"
+      on:click={closeLB}
+    ></button>
+
+    <!-- Dialog content -->
     <div
       class="lb-content"
       role="document"
-      on:click|stopPropagation
+      on:pointerdown|stopPropagation
     >
       <button
         class="lb-close"
@@ -125,6 +131,9 @@
     </div>
   </div>
 {/if}
+
+
+
 
 
 
@@ -158,7 +167,7 @@
 
   .intro-text {
     max-width: 760px;
-    text-align: center;
+    text-align:justify;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
   }
@@ -173,6 +182,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0 0 1rem 0;
+    /* text-align: center; */
   }
 
   .intro-text p {
@@ -240,42 +250,58 @@
   }
 
   /* ====== Lightbox ====== */
-  .lb-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
-    display: grid;
-    place-items: center;
-    padding: 1rem;
-  }
-  .lb-content {
-    position: relative;
-    max-width: min(92vw, 1400px);
-    max-height: 90vh;
-    display: grid;
-    place-items: center;
-  }
-  .lb-image {
-    max-width: 100%;
-    max-height: 88vh;      /* fits within viewport */
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  }
-  .lb-close {
-    position: absolute;
-    top: -0.75rem;
-    right: -0.75rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 999px;
-    border: none;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
+  /* Lightbox root: non-interactive; holds backdrop + content */
+.lb-root {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+/* Full-screen backdrop is a BUTTON (interactive, keyboard-friendly) */
+.lb-backdrop {
+  all: unset;                /* remove default button styles */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
+
+/* Content pane */
+.lb-content {
+  position: relative;
+  max-width: min(92vw, 1400px);
+  max-height: 90vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Image */
+.lb-image {
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Close button */
+.lb-close {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 </style>

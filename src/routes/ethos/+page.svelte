@@ -18,15 +18,15 @@
         </p>  
 
         <p>
-          Having a lifelong interest in audio, especially vinyl replay (and attendant cultures- DJ, dubplate, audiophile), led me to acquire, setup, and operate a Neumann VMS based mastering studio. This was a formative experience to say the least. During that endeavor, I learned that calibration is critical, and careful attention to the <em>entire</em> chain is more important than any <em>one</em> piece.
+          Having a lifelong interest in audio, especially vinyl replay (and attendant cultures- DJ, dubplate, audiophile), led me to acquire, setup, and operate a Neumann VMS based mastering studio. This was a formative experience to say the least, teaching me that <em>calibration is critical</em>, and careful attention to the <em>entire</em> chain is more important than any <em>one</em> piece.
         </p>
         <p>
           
-          Next came running a brick and mortar HiFi shop along with its owner. I met many great people, and refined of my taste in music replay even further. After that chapter I received a few calls from clients that needed help setting up their prized turntables and full systems. This led to the creation of my analog-centric audio distributorship and consultancy, Solypsa. Solypsa is a culmination of my passion for music, my technical expertise, and my personal commitment to quality.
+          Next came running a brick and mortar HiFi shop along with its owner. I met many great people, and refined of my taste in music replay even further. After that chapter, i took on clients that needed help setting up their prized turntables and full systems. This led to the creation of my analog-centric audio distributorship and consultancy, Solypsa. 
         
         </p>
 
-        <p>Solypsa offers full service audio distribution, system design, and installation. We also provide comprehensive
+        <p>Solypsa is the culmination of my passion for music, my technical expertise, and my personal commitment to quality. We offer full service audio distribution, system design, and installation. We also provide comprehensive
           calibration of your existing turntable, tonearm, and cartridge using the best in class tools and years of experience.
         </p>
         <p>
