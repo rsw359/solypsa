@@ -173,18 +173,23 @@
     max-width: 650px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
-    padding: 0 0 2rem 0;
+    padding: 0 0 2rem ;
+
   }
 
   .intro-text h1 {
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0 0 1rem 0;
+
   }
 
   .intro-text p {
     margin: 0;
     max-width: 65ch;
+    text-align: justify;
+    
+
   }
 
   .visually-hidden {
@@ -194,13 +199,21 @@
     white-space: nowrap;
   }
 
-  @media (max-width: 900px) {
-    .product-wrapper { justify-content: center; text-align: center; }
-    .intro-text { padding-bottom: 1.5rem; }
-    .intro-text h1 { font-size: 1.9rem; }
-  }
-  @media (max-width: 520px) {
-    .section { padding: 3rem 1rem; }
-    .intro-text h1 { font-size: 1.7rem; }
-  }
+ 
+/* Intro text responsive adjustments */
+@media (max-width: 900px) {
+  .product-wrapper { justify-content: center; text-align: justify; }
+  .intro-text { gap: 1.25rem; text-align: justify; }
+  .intro-text h1 { font-size: 1.9rem; }
+}
+
+@media (max-width: 520px) {
+  .product-wrapper { padding: 0; }         /* remove extra layer */
+  .intro-text { padding: 0 1rem 2rem; text-align: justify; } /* keep 1rem, aligns with slide */
+  .intro-text h1 { font-size: 1.7rem; }
+}
+
+
+
+
 </style>

@@ -5,7 +5,7 @@
 <!-- svelte-ignore a11y_no_redundant_roles -->
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-left">Site built by Climb Studio</div>
+    <div class="footer-left">Site built by Climb</div>
     <div class="footer-center">© {year} Solypsa</div>
     <div class="footer-right">
       <a href="https://instagram.com/solypsa.audio" target="_blank" rel="noopener" aria-label="Instagram" class="insta-link">
@@ -43,7 +43,7 @@
     font-size: 0.9rem;
   }
 
-  .footer-left  { justify-self: start; color: rgba(0,0,0,0.32); font-weight: 300; }
+  .footer-left  { justify-self: start; color: rgba(0,0,0,0.32); font-weight: 400; }
   .footer-center{ justify-self: center; color: rgba(0,0,0,0.32); font-weight: 400; }
   .footer-right { justify-self: end; color: rgba(0,0,0,0.32); font-weight: 400; }
 

@@ -192,6 +192,7 @@
     line-height: 1.6;
     max-width: 60ch;
     font-weight: 300;            /* ensure copy remains light */
+    text-align: justify;
   }
   
   .product-link a {
@@ -329,10 +330,10 @@
 
   /* ===== Responsive ===== */
   @media (max-width: 900px) {
-    .slide-inner { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+    .slide-inner { grid-template-columns: 1fr; gap: 1.25rem; text-align: justify; }
   }
   @media (max-width: 520px) {
-    .slide { padding: 2rem 1rem; }
+    .slide { padding:2rem var(--side-pad, 1rem); }
     .thumb-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); max-width: 520px; }
     .lb-close { top: 0.5rem; right: 0.5rem; }
   }
