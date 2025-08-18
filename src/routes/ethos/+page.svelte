@@ -10,7 +10,7 @@
   <main class="section">
     <div class="container">
       <div class="intro-text">
-        <h1>Precision. Depth. Design <em>Solypsa</em></h1>
+        <h1>Design beyond function. <em> Solypsa</em></h1>
         <h3>Ethos</h3>
         <p>
           My name is Erik Peel, creator of Solypsa. My goal is to bring analog excellence into focus through carefully curated
@@ -83,16 +83,17 @@
   }
 
   .intro-text h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin: 0 0 1rem 0;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .intro-text p {
     margin: 0 0 1rem 0;
-    max-width: 65ch;
+    max-width: 70ch;
     margin-inline: auto;
+    text-align: justify;
   }
 
   /* Responsive tweaks */

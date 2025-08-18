@@ -45,7 +45,7 @@
   <main class="section">
     <div class="container">
       <div class="intro-text">
-        <h1>Precision. Depth. Design <em>Solypsa</em></h1>
+        <h1>Precision. Depth. Design. <em> Solypsa</em></h1>
         <h3>Solypsa Pro</h3>
 
         <p>
@@ -167,7 +167,7 @@
 
   .intro-text {
     max-width: 760px;
-    text-align:justify;
+    
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
   }
@@ -189,6 +189,7 @@
     margin: 0 0 1rem 0;
     max-width: 70ch;
     margin-inline: auto;
+    text-align: justify;
   }
 
   .cta a {
