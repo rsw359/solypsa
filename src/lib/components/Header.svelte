@@ -1,10 +1,14 @@
 <script>
   import { onMount } from 'svelte';
-  let time = '';
+
+  let time;
 
   function updateTime() {
     const now = new Date();
-    time = now.toLocaleTimeString('en-GB', { hour12: false });
+    time = now.toLocaleTimeString('en-GB', {
+      hour12: false,
+      timeZone: 'America/Los_Angeles' // Seattle's timezone
+    });
   }
 
   onMount(() => {
@@ -22,19 +26,18 @@
   </div>
 
   <div class="center">
-    <a href="/nnnn">NNNN →</a>
-    <a href="/ethos">RADA →</a>
-    <a href="/contact">Audio Creative →</a>
+    <a href="/home">Home →</a>
+    <a href="/hifi">HI-FI →</a>
+    
   </div>
   <div class="center">
-    <a href="/pro">STST →</a>
-    <a href="/ethos">Primary Control→</a>
-    <a href="/contact">Contact →</a>
+    <a href="/pro">Pro →</a>
+    <a href="/ethos">Ethos→</a>
+    
   </div>
 
   <div class="center">
-    <a href="/pro">Ethos →</a>
-    <a href="/ethos">Contact →</a>
+    <a href='mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry'>Contact →</a>
     
   </div>
 

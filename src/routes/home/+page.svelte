@@ -34,7 +34,7 @@
 :global(body) {
   margin: 0;
   padding: 0;
-  background-color: #000; /* prevents white gaps */
+  /* background-color: #000; prevents white gaps */
   box-sizing: border-box;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;

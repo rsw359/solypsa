@@ -1,23 +1,22 @@
 <script>
-  import Home from './home/+page.svelte';
-  import { onMount } from 'svelte';
-
-  let scrolled = false;
-
-  const handleScroll = () => {
-    if (!scrolled) {
-      scrolled = true;
-      const target = document.querySelector('.hero-bottom');
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  onMount(() => {
-    window.addEventListener('scroll', handleScroll, { once: true });
-  });
+  import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<Home />
+<div class="app">
+  <Header />
+  <main><slot /></main>
+  <Footer />
+</div>
 
+<style>
+  .app {
+    min-height: 100svh;        /* full viewport height (safe on mobile) */
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;                   /* grows to push footer to the bottom */
+    min-width: 0;
+  }
+</style>
