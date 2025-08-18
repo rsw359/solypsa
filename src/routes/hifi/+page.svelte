@@ -1,131 +1,154 @@
 <script>
   import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import ProductCarousel from '$lib/components/ProductCarousel.svelte';
+
+  const products = [
+    {
+      id: 'NNNN',
+      title: 'NNNN Loudspeakers',
+      copy: `What happens when some of the smartest people in audio put together a loudspeaker company?
+             You get speakers that break the mold, managing to truly stride across HiFi and Professional requirements,
+             smashing expectations along the way. Rune Skramstad, CTO, is pushing the envelope in horn loading and
+             performance per size areas. <br><br> Solypsa is proud to be the exclusive distributor for NNNN in North America.`,
+
+      link: {
+        url: 'https://nnnn.audio',
+        label: 'NNNN →'
+      },
+             
+      images: [
+        { src: '/comium-1.jpg', alt: 'Comium 30 front view' },
+        { src: '/comium-grill.jpg', alt: 'Comium 30 with grill' },
+        { src: '/devor-30.png', alt: 'Devor series' },
+        { src: '/Trent-35.png', alt: 'Trent 35/25' },
+        { src: '/ON2.png', alt: 'Ojas x NNNN ON2' }
+      ]
+    },
+    {
+      id: 'STST',
+      title: 'STST Turntables',
+      copy: `Stefan Strohmetz, the creator of STST,  never gave up on direct drive. The direct drives of the early 80s offered unparalleled speed, control, and bass reproduction, 
+            but often lacked the body and tone colors a truly top class table should offer. Stefan designed a made-in-house low torque motor solution and has been constantly 
+            refined his design since 1985! Handmade in Germany, and finished to your specification- such luxury is unheard of in today’s mass produced world. This table is very musical
+             and accurate, worlds away from cold and sterile of in many modern productions.<br><br>Stefan offers his own handmade carbon and pom tonearm: the Vertex. A gimbal design in your choice 
+             of 9″/10″/12″ lengths. The traditional look hides a labor of love, higlighted by titanium bearing tolerances so fine they took years to perfect. What Stefan has made here is a 
+             neutral and musical masterpiece at a serious value! <br><br> We are proud to be the exclusive distributor for STST in North America.`,
+      
+      link: {
+        url: 'https://stst-audio.de',
+        label: 'STST →'
+      },
+      images: [
+        { src: '/STST1.jpg', alt: 'stst turntable' },
+        { src: '/STST2.jpg', alt: 'stst turntable' },
+        { src: '/STST3.jpg', alt: 'stst turntable' },
+        { src: '/STST4.jpg', alt: 'stst turntable' },
+        { src: '/STST6.jpg', alt: 'stst turntable' },
+        { src: '/STST5.jpg', alt: 'stst turntable' },
+      ]
+    },
+    {
+      id: 'Audio Creative',
+      title: 'Audio Creative Tonearms',
+      copy: `Audio Creative, based in the Netherlands, has lovingly created a modern take on the classic high-mass transcription tonearm. Available in 9″, 10″ and 12″ 
+      (12″ available with standard connector or SPU A).<br><br>The Groovemaster III features a titanium armwand with silver internal wiring terminating into a 5 pin din output connector. 
+      New for V3 is a fine adjustment counterweight making small tweaks to VTF a pleasure.  Options include a sliding SME style mounting base, a simple round base or the heavy weight base 
+      with fine and on the fly VTA adjustment. <br><br>Solypsa is a dealer for Audio Creative in North America.
+      A small shipping fee from Europe will be added to the order. Contact us to discuss available options and current USD prices.`,
+      link: {
+        url: 'https://audio-creative.nl',
+        label: 'Audio Creative →'
+      },
+      images: [
+        { src: '/AC1.png', alt: 'custom order' },
+        { src: '/AC2.jpg', alt: 'custom order' },
+        { src: '/AC3.jpg', alt: 'custom order' },
+        { src: '/AC4.png', alt: 'custom order' },
+      ]
+    },
+    {
+      id: 'Primary Control',
+      title: 'Primary Control',
+      copy: `Bernd Hemmen makes tonearms and turntables with care and precision in this Amsterdam studio. 
+      His tonearms are gimbal (Arrow) or stabilized uni pivots (Reference, Gravity, FCL). 
+      His Kinea turntable is a variable torque direct drive.`,
+
+      link: {
+        url: 'https://primarycontrol.nl',
+        label: 'Primary Control →'
+      },
+      images: [
+        { src: '/PC1.jpg', alt: 'custom order' },
+        { src: '/PC2.jpg', alt: 'custom order' },
+        { src: '/PC3.png', alt: 'custom order' },
+        { src: '/PC4.jpg', alt: 'custom order' },
+        { src: '/PC6.png', alt: 'custom order' },
+      ]
+    },
+
+    {
+      id: 'Solypsa Custom',
+      title: 'Solypsa Custom',
+      copy: `Solypsa Custom is our in-house design and build service. We can create custom solutions for your audio needs, whether it be a bespoke turntable, 
+      speaker system, or any other audio equipment. We work closely with you to ensure that your vision is realized with the highest quality craftsmanship.
+      At Solypsa we guide you through the entire process, from initial design to final production, ensuring that every detail meets your specifications.
+      Our lines are built with care, often by hand, and always with a dedication to the craft.`,
+
+      link: {
+        url: 'mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry',
+        label: 'Learn more →'
+      },
+
+
+      images: [
+        { src: '/custom1.jpg', alt: 'custom order' },
+        { src: '/custom2.jpg', alt: 'custom order' },
+        { src: '/custom3.jpg', alt: 'custom order' },
+        { src: '/custom4.jpg', alt: 'custom order' },
+        { src: '/custom5.jpg', alt: 'custom order' },
+        
+      ]
+    },
+    
+  ];
 </script>
 
 <Header />
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="intro-wrapper">
-    <div class="intro-text">
-      <h1>Precision. Depth. Design <em>Solypsa</em></h1>
-      <p>
-        At Solypsa, we bring analog excellence into focus through carefully curated
-        audio equipment and thoughtful design. We believe in the power of sound to
-        transform spaces and experiences.
-      </p>
-      <p>
-        Full service audio distribution, system design and installation. Also comprehensive
-        calibration of your existing turntable / tonearm / cartridge. Best of class tools and years of experience.
-      </p>
-
-      <nav class="nav">
-        <a href="#NNNN">NNNN →</a>
-        <a href="#ppp">Ethos →</a>
-        <a href="/contact">Contact →</a>
-      </nav>
-    </div>
-  </div>
-</section>
-
-<!-- NNNN Section -->
-<section id="NNNN">
+<!-- NNNN Intro (unchanged) -->
+<section id="NNNN" class="section">
   <div class="product-wrapper">
     <div class="intro-text">
-      <h1>NNNN Loudspeakers</h1>
+      <h1>HI-FI Products</h1>
       <p>
-        NNNN hail from Oslo. What happens when some of the smartest people in audio put together a loudspeaker company?
-        You get speakers that break the mold. They manage to truly stride across HiFi and Professional requirements
-        smashing expectations along the way. Rune Skramstad, CTO, happens to be pushing the envelope in horn loading and
-        performance per size areas. Oh and in his spare time putting together ultimate systems for ETF…
+        As an audio/HI-FI distributor, we are proud to offer a curated selection of high-end audio products that 
+        combine exceptional performance with artisanal craftsmanship. 
       </p>
-    </div>
-  </div>
-
-  <div class="container">
-    <!-- Comium 30 -->
-    <div class="text">
-      <h3>Comium 30</h3>
+      <br>
       <p>
-        Designed to mount directly to a wall (or even ceiling) less than 5″ deep. Bringing true mastering monitor
-        sound quality to a very design and space conscious form factor. Perfect for modern condo / apartment spaces as
-        well as high end boardrooms and gaming environments.
+        Our products are designed to meet the needs of both Hi-Fi enthusiasts and professional audio engineers,
+        ensuring that you get the best sound quality possible. We believe in the power of music and sound to transform spaces and experiences, 
+        and we are committed to providing you with the tools to achieve your vision. Whether you are looking for a turntable, speaker system, or any other audio equipment, we have the perfect solution for you.
       </p>
-    </div>
-    <div class="image">
-      <div class="image-gallery">
-        <img src="/comium-1.jpg" alt="Comium 1" />
-        <img src="/comium-2.jpg" alt="Comium 2" />
-        <img src="/comium-grill.jpg" alt="Comium Grill" />
-      </div>
-    </div>
-
-    <!-- Devor -->
-    <div class="text">
-      <h3>Devor 40/30/23/160</h3>
+      <br>
       <p>
-        The horn loaded Devor subwoofer models feature extra low distortion and a sub cardioid dispersion pattern, both
-        of which make for easy placement and integration. Ultimate subwoofers for the most demanding systems bar none.
+        <a style="font-weight:400; text-decoration:none; color: black;" href="mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry">Get in touch</a> with us to learn more about our products and how we can help you achieve your audio goals.
       </p>
-    </div>
-    <div class="image">
-      <div class="image-gallery single">
-        <img src="/devor-30.png" alt="Devor" />
-      </div>
-    </div>
-
-    <!-- Trent -->
-    <div class="text">
-      <h3>Trent 35/25</h3>
-      <p>
-        Small footprint, mighty capable. Transmission line loaded subwoofer (12″ or 18″) with omni dispersion pattern.
-        Remember that transmission line loaded subs fall off at half the rate below resonant frequency versus a ported
-        bass reflex sub, so these dig deep.
-      </p>
-    </div>
-    <div class="image">
-      <div class="image-gallery single">
-        <img src="/Trent-35.png" alt="Trent" />
-      </div>
-    </div>
-
-    <!-- Ojas x NNNN -->
-    <div class="text">
-      <h3>Ojas x NNNN ON series 5</h3>
-      <p>
-        Four modern reimaginations of the classic large format speaker system, at home in the most demanding audiophile
-        systems or clubs. ON7 – ON2 will require large rooms and high power amplification to reach their full potential.
-        ON1 is a more compact version that can be used in smaller spaces, but still delivers the same high quality sound.
-      </p>
-    </div>
-    <div class="image">
-      <div class="image-gallery single">
-        <img src="/ON2.png" alt="ON2" />
-      </div>
     </div>
   </div>
 </section>
 
-<!-- Ethos Section -->
-<section id="ppp">
-  <div class="container">
-    <div class="text text-section">
-      <h2>Lorem ipsum dolor sit amet</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
-        dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-      </p>
-    </div>
-    <div class="image"><!-- Add your image here if needed --></div>
-  </div>
+<!-- Carousel for remaining products -->
+<section aria-labelledby="products" class="section">
+  <h2 id="products" class="visually-hidden">Products</h2>
+  <ProductCarousel {products} autoplay={true} interval={5500} pauseOnHover={true} />
 </section>
 
+<Footer />
 
 <style>
-  :global(html) {
-    scroll-behavior: smooth;
-  }
-
+  :global(html) { scroll-behavior: smooth; }
   :global(body) {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -134,165 +157,50 @@
     line-height: 1.5;
   }
 
-  /* Hero Section */
-  .hero {
-    padding: 6rem 2rem 4rem;
-    display: flex;
-    justify-content: center;
-    background-color: #eef1f2;
-  }
+  .section { padding: 4rem 1.25rem; }
 
-  .intro-wrapper {
+  .product-wrapper {
     max-width: 1200px;
     width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   .intro-text {
-    max-width: 600px;
+    max-width: 650px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
+    padding: 0 0 2rem 0;
   }
 
-  .nav {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0 3rem;
-    justify-content: center;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color: black;
-  }
-
-  /* Product Section */
-  .product-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  section {
-    padding: 4rem 2rem;
-  }
-
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .text {
-    flex: 1 1 400px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 300;
-  }
-
-  .text-section {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding-top: 2rem;
-  }
-
-  .image-gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-bottom: 100px;
-  }
-
-  .image-gallery img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .image-gallery img:hover {
-    transform: scale(1.05);
-  }
-
-  .image-gallery.single {
-    justify-content: center;
-    padding-bottom: 100px;
-  }
-
-  .image-gallery.single img {
-    max-width: 400px;
-    cursor: default;
-  }
-
-  /* Headings */
-  h1 {
-    font-size: 2.5rem;
+  .intro-text h1 {
+    font-size: 2.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
   }
 
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+  .intro-text p {
+    margin: 0;
+    max-width: 65ch;
   }
 
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 2rem;
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
   }
 
-  p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    max-width: 600px;
+  @media (max-width: 900px) {
+    .product-wrapper { justify-content: center; text-align: center; }
+    .intro-text { padding-bottom: 1.5rem; }
+    .intro-text h1 { font-size: 1.9rem; }
   }
-
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .hero,
-    .intro-wrapper,
-    .product-wrapper,
-    .container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .intro-text,
-    .text {
-      text-align: center;
-    }
-
-    .image-gallery,
-    .image-gallery.single {
-      justify-content: center;
-    }
-
-    .image-gallery img,
-    .image-gallery.single img {
-      max-width: 90%;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
+  @media (max-width: 520px) {
+    .section { padding: 3rem 1rem; }
+    .intro-text h1 { font-size: 1.7rem; }
   }
 </style>
-
-

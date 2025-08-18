@@ -1,10 +1,14 @@
 <script>
   import { onMount } from 'svelte';
-  let time = '';
+
+  let time;
 
   function updateTime() {
     const now = new Date();
-    time = now.toLocaleTimeString('en-GB', { hour12: false });
+    time = now.toLocaleTimeString('en-GB', {
+      hour12: false,
+      timeZone: 'America/Los_Angeles' // Seattle's timezone
+    });
   }
 
   onMount(() => {
@@ -15,14 +19,26 @@
 </script>
 
 <nav class="header">
-  <div class="left">
-    <img id="logo-sm" src="/dark1.png" alt="">
+  <div class="left"><a href="/">
+  
+    <img id="logo-sm" src="/dark1.png" alt="logo">
+  </a>
   </div>
 
   <div class="center">
+    <a href="/">Home →</a>
+    <a href="/hifi">HI-FI →</a>
+    
+  </div>
+  <div class="center">
     <a href="/pro">Pro →</a>
-    <a href="/ethos">Ethos →</a>
-    <a href="/contact">Contact →</a>
+    <a href="/ethos">Ethos→</a>
+    
+  </div>
+
+  <div class="center">
+    <a href='mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry'>Contact →</a>
+    
   </div>
 
   <div class="right">
@@ -85,6 +101,12 @@
 
   .time {
     font-weight: bold;
+  }
+
+  #logo-sm {
+  height: 50px;
+  background: transparent important!;  /* ensure no background */
+  display: block;            /* prevents inline spacing glitches */
   }
 
   
