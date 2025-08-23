@@ -72,7 +72,7 @@
           </a>
         </p>
         <p class="cta">
-        Interested in becoming a HI-FI distribution partner? Please inquire
+        Interested in becoming a PRO distribution partner? Please inquire
         <a href="mailto:info@solypsa.com?subject=Partner%20Inquiry" style="font-weight:400; color: black; text-decoration: none;">here</a>.
       </p>
       </div>
