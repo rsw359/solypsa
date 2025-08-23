@@ -7,10 +7,12 @@
     {
       id: 'NNNN',
       title: 'NNNN Loudspeakers',
-      copy: `What happens when some of the smartest people in audio put together a loudspeaker company?
+      copy: `<p>What happens when some of the smartest people in audio put together a loudspeaker company?
              You get speakers that break the mold, managing to truly stride across HiFi and Professional requirements,
              smashing expectations along the way. Rune Skramstad, CTO, is pushing the envelope in horn loading and
-             performance per size areas. <br><br> Solypsa is proud to be the exclusive distributor for NNNN in North America.`,
+             performance per size areas.</p> 
+             
+             <p>Solypsa is proud to be the exclusive distributor for NNNN in North America.</p>`,
 
       link: {
         url: 'https://nnnn.audio',
@@ -120,27 +122,36 @@
 <section id="NNNN" class="section">
   <div class="product-wrapper">
     <div class="intro-text">
-      <h1>HI-FI Products</h1>
-      <p>
-        As an audio/HI-FI distributor, we are proud to offer a curated selection of high-end audio products that 
-        combine exceptional performance with artisanal craftsmanship. 
-      </p>
+      <h1>Solypsa HI-FI</h1>
+      <h4>USA distributor for NNNN loudspeakers and STST turntables</h4>
+  
+      <p>We offer a curated selection of high-end audio products that combine exceptional performance with artisanal craftsmanship.</p>
       <br>
+      <!-- <p>
+        Interested in becoming a HiFi distribution partner? Please inquire <a style="font-weight:400; color: black;" href="mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry">here</a>.
+      </p>
+      <br> -->
       <p>
-        Our products are designed to meet the needs of both Hi-Fi enthusiasts and professional audio engineers,
-        ensuring that you get the best sound quality possible. We believe in the power of music and sound to transform spaces and experiences, 
-        and we are committed to providing you with the tools to achieve your vision. Whether you are looking for a turntable, speaker system, or any other audio equipment, we have the perfect solution for you.
+        Solypsa and our partners design with products that meet the highest requirements of both Hi-Fi enthusiasts and professional audio engineers, and our skillful deployment of them as a system ensures the best sound quality possible. We believe in the power of music and the value of excellent audio playback to <em>enhance</em> life and well being. We are committed to providing you with the tools to achieve your vision. Whether you are looking for a turntable, speaker system, or any other audio equipment, we are here to help you find the perfect solution.
       </p>
       <br>
       <p>
         <a style="font-weight:400; text-decoration:none; color: black;" href="mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry">Get in touch</a> with us to learn more about our products and how we can help you achieve your audio goals.
       </p>
+      <br>
+      <p class="cta">
+        Interested in becoming a HI-FI distribution partner? Please inquire
+        <a href="mailto:info@solypsa.com?subject=Partner%20Inquiry" style="font-weight:400; color: black; text-decoration: none;">here</a>.
+      </p>
+      
+      <p>For a list of our HI-FI partners click <a href="/partners" style="font-weight:400; color: black; text-decoration: none;" >here →</a></p>
+
     </div>
   </div>
 </section>
 
 <!-- Carousel for remaining products -->
-<section aria-labelledby="products" class="section">
+<section aria-labelledby="products" class="section carousel-section">
   <h2 id="products" class="visually-hidden">Products</h2>
   <ProductCarousel {products} autoplay={true} interval={5500} pauseOnHover={true} />
 </section>
@@ -173,23 +184,19 @@
     max-width: 650px;
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
-    padding: 0 0 2rem ;
-
+    padding: 0 0 2rem;
   }
 
   .intro-text h1 {
     font-size: 2.2rem;
     font-weight: 600;
     margin: 0 0 1rem 0;
-
   }
 
   .intro-text p {
     margin: 0;
     max-width: 65ch;
     text-align: justify;
-    
-
   }
 
   .visually-hidden {
@@ -199,21 +206,28 @@
     white-space: nowrap;
   }
 
- 
-/* Intro text responsive adjustments */
-@media (max-width: 900px) {
-  .product-wrapper { justify-content: center; text-align: justify; }
-  .intro-text { gap: 1.25rem; text-align: justify; }
-  .intro-text h1 { font-size: 1.9rem; }
-}
+  /* Intro text responsive adjustments */
+  @media (max-width: 900px) {
+    .product-wrapper { justify-content: center; text-align: justify; }
+    .intro-text { gap: 1.25rem; text-align: justify; }
+    .intro-text h1 { font-size: 1.9rem; }
+  }
 
-@media (max-width: 520px) {
-  .product-wrapper { padding: 0; }         /* remove extra layer */
-  .intro-text { padding: 0 1rem 2rem; text-align: justify; } /* keep 1rem, aligns with slide */
-  .intro-text h1 { font-size: 1.7rem; }
-}
+  @media (max-width: 520px) {
+    .product-wrapper { padding: 0; }
+    .intro-text { padding: 0 1rem 2rem; text-align: justify; }
+    .intro-text h1 { font-size: 1.7rem; }
+  }
 
+  /* Carousel section spacing adjustment */
+  .carousel-section {
+    padding-top: 0.5rem; /* reduced top padding */
+  }
 
-
-
+  @media (max-width: 520px) {
+    .carousel-section {
+      padding-top: 0.5rem; /* consistent on small screens */
+    }
+  }
 </style>
+

@@ -24,21 +24,27 @@
 </section>
 
 <style>
-  /* ========== Global Styles ========== */
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-  :global(html), :global(body) {
+  /* ---------- Global resets (Svelte-safe :global usage) ---------- */
+  :global(html) {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  }
+  :global(body) {
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     background-color: #eef1f2;
     color: #222;
     line-height: 1.5;
   }
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: border-box;
+  }
 
-  /* ========== Hero Layout ========== */
+  /* ---------- Hero layout ---------- */
   .hero {
     height: 100vh;
     width: 100%;
@@ -47,14 +53,14 @@
     overflow: hidden;
   }
 
-  /* Hero Top fills ~70%, Hero Bottom ~30% */
+  /* Top ~70%, bottom ~30% via flex ratios */
   .hero-top {
     flex: 7 0 0;
     position: relative;
-    background: url('/nnnn.png') center/cover no-repeat;
+    background: url('/nnnn.png') center / cover no-repeat;
   }
 
-  /* Centered Logo */
+  /* Centered logo */
   .hero-title {
     position: absolute;
     top: 50%;
@@ -64,28 +70,33 @@
     height: auto;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
-    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.7));
   }
 
   .hero-bottom {
     flex: 3 0 0;
     background-color: #111;
-    color: white;
+    color: #fff;
     padding: 1rem 1.5rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers the byline container horizontally */
   }
 
   .byline {
     font-size: 2rem;
     font-weight: 300;
-    text-align: center;
     font-family: 'Helvetica Neue', sans-serif;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-    margin-bottom: 2rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    margin: 0 0 2rem 0;
+    text-align: center;    /* ensure centered text */
+    width: 100%;
   }
 
   .content {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -110,7 +121,7 @@
   }
 
   .links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     padding: 0.25rem 0;
     border-bottom: 2px solid transparent;
@@ -118,14 +129,17 @@
   }
 
   .links a:hover {
-    border-color: white;
+    border-color: #fff;
   }
 
-  /* Responsive */
+  /* ---------- Responsive ---------- */
   @media (max-width: 768px) {
     .byline {
       font-size: 1.8rem;
-      padding: 0 1rem;
+      padding-inline: 1rem;  /* adds breathing room on very small screens */
+      margin-left: auto;      /* hard-center insurance */
+      margin-right: auto;
+      text-align: center;
     }
     .links {
       flex-direction: column;
@@ -135,9 +149,10 @@
     }
   }
 
-  /* Animations */
+  /* ---------- Animations ---------- */
   @keyframes fadeIn {
     from { opacity: 0; transform: translate(-50%, -60%); }
     to   { opacity: 1; transform: translate(-50%, -50%); }
   }
 </style>
+

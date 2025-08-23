@@ -13,27 +13,20 @@
         <h1>Design beyond function. <em> Solypsa</em></h1>
         <h3>Ethos</h3>
         <p>
-          My name is Erik Peel, creator of Solypsa. My goal is to bring analog excellence into focus through carefully curated
-          audio equipment and thoughtful design. I believe in the power of sound to transform spaces and experiences. 
+          My name is Erik Peel, creator of Solypsa. My goal is to bring audio excellence into focus through carefully curated equipment and thoughtful design. I believe in the power of music to transform spaces and experiences.
         </p>  
 
         <p>
-          Having a lifelong interest in audio, especially vinyl replay (and attendant cultures- DJ, dubplate, audiophile), led me to acquire, setup, and operate a Neumann VMS based mastering studio. This was a formative experience to say the least, teaching me that <em>calibration is critical</em>, and careful attention to the <em>entire</em> chain is more important than any <em>one</em> piece.
-        </p>
-        <p>
-          
-          Next came running a brick and mortar HiFi shop along with its owner. I met many great people, and refined of my taste in music replay even further. After that chapter, i took on clients that needed help setting up their prized turntables and full systems. This led to the creation of my analog-centric audio distributorship and consultancy, Solypsa. 
-        
+          Having a lifelong interest in audio, especially vinyl replay (and attendant cultures- DJ, dubplate, audiophile), led me to acquire, setup, and operate a Neumann VMS based mastering studio. This was a formative experience to say the least, teaching me that calibration is critical, and careful attention to the entire chain is more important than any one piece.
         </p>
 
-        <p>Solypsa is the culmination of my passion for music, my technical expertise, and my personal commitment to quality. We offer full service audio distribution, system design, and installation. We also provide comprehensive
-          calibration of your existing turntable, tonearm, and cartridge using the best in class tools and years of experience.
+        <p>Solypsa is the culmination of my passion for music, my technical expertise, and my personal commitment to quality.
         </p>
         <p>
-          Operating in the Pacific Northwest, I am proud to represent a select group of lines that embody the trifecta of superb performance, value, and artisanal production. These lines are built with care, often by hand, and always with a dedication to the craft. As a result, there is often some time needed to create upon order.
+          I think of myself as a <strong>musical pimp</strong>. Delivering the finest musical hoes to the streets. Whatever your musical pleasure, I can get it for you, baby. In the words of the illustrius Curtis Mayfield, <strong>"Pimping ain't easy, but it's necessary."</strong> 
         </p>
 
-        <p> <a style="font-weight:400; text-decoration:none; color: black;" href="mailto:info@solypsa.com?subject=Custom%20Build%20Inquiry">Get in touch</a> with me to discuss your analog desires, whether digital or analog.</p>
+        <p> We offer full service audio sales and distribution, system design, and installation to the HiFi, home and professional markets.</p>
       </div>
     </div>
   </main>
