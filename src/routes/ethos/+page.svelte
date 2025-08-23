@@ -22,9 +22,7 @@
 
         <p>Solypsa is the culmination of my passion for music, my technical expertise, and my personal commitment to quality.
         </p>
-        <p>
-          I think of myself as a <strong>musical pimp</strong>. Delivering the finest musical hoes to the streets. Whatever your musical pleasure, I can get it for you, baby. In the words of the illustrius Curtis Mayfield, <strong>"Pimping ain't easy, but it's necessary."</strong> 
-        </p>
+        
 
         <p> We offer full service audio sales and distribution, system design, and installation to the HiFi, home and professional markets.</p>
       </div>
