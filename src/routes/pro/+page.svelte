@@ -49,17 +49,14 @@
         <h3>Solypsa Pro</h3>
 
         <p>
-          For performance spaces, studios, and touring engineers, Solypsa Pro delivers
-          design-first sound with uncompromising reliability. From horn-loaded systems
-          with master-grade detail to compact solutions that tame difficult rooms, we build
-          rigs that translate intent—night after night.
+          For performance spaces, studios, and touring engineers, Solypsa Pro and our partners deliver
+          beautiful sound with uncompromising reliability. From horn-loaded systems with studio-grade accuracy, to compact solutions that tame difficult rooms, we build rigs that translate intent—night after night.
         </p>
 
         <p>
-          We represent a curated set of manufacturers whose products excel under pressure,
-          and we also <strong>spec, source, and integrate gear beyond our own lines</strong> when it serves
-          the brief. Whether you need turnkey venue sound, a reference playback chain, or a
-          hybrid install that must satisfy FOH, broadcast, and backline constraints, we’ll
+         We only represent select manufacturers whose products excel under pressure, and we never forget music's power for emotional connection.
+         We <strong>specify, source, and integrate gear beyond our own lines</strong>, even one off customs, when it serves
+          the brief. Whether you need turnkey venue sound, a reference playback chain, or someting unique to your needs, we
           tailor a system to your room, budget, and timeline.
         </p>
 

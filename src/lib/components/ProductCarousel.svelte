@@ -25,22 +25,11 @@
     startX = 0; deltaX = 0; deactivate();
   };
 
-  // Global key handler (slides only; lightbox handled separately)
+  // Lightbox state
   let lightboxOpen = false;
   let lightboxImages = [];
   let lightboxIndex = 0;
 
-  const handleKeydown = (e) => {
-    if (lightboxOpen) {
-      if (e.key === 'Escape') { e.preventDefault(); closeLightbox(); }
-      return;
-    }
-    if (!isActive) return;
-    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
-    if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
-  };
-
-  // Lightbox
   function openLightbox(images, i) {
     if (!images?.length) return;
     lightboxImages = images;
@@ -49,7 +38,20 @@
   }
   function closeLightbox() { lightboxOpen = false; }
 
-  // Backdrop keyboard close (dialog must react to keys if it has click)
+  // Key handling
+  function handleKeydown(e) {
+    // Lightbox: only Esc handled here
+    if (lightboxOpen) {
+      if (e.key === 'Escape') { e.preventDefault(); closeLightbox(); }
+      return;
+    }
+    // Slides: only when active
+    if (!isActive) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); }
+  }
+
+  // Backdrop keyboard close for a11y
   const handleBackdropKey = (e) => {
     if (!lightboxOpen) return;
     if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
@@ -73,36 +75,43 @@
   on:touchmove={onTouchMove}
   on:touchend={onTouchEnd}
 >
-  <!-- Slides -->
   <div class="track-wrapper">
     <div class="track" style="--index:{index};">
-      {#each products as p (p.id)}
-        <article class="slide">
+      {#each products as p, i (p.id)}
+        <article class="slide" aria-hidden={index !== i}>
           <div class="slide-inner">
+            <!-- Text column -->
             <div class="text">
               <h3>{p.title}</h3>
-              {#if p.copy}
-                <p>{@html p.copy}</p>
-              {/if}
-              {#if p.link?.url}
-    <p class="product-link">
-      <a href={p.link.url} target="_blank" rel="noopener noreferrer">
-        {p.link.label ?? 'Learn more →'}
-      </a>
-    </p>
-  {/if}
-            </div>
+                  {#if p.copy}<p>{@html p.copy}</p>{/if}
+                  {#if p.link?.url}
+                    <p class="product-link">
+                      <a href={p.link.url} target="_blank" rel="noopener noreferrer">
+                        {p.link.label ?? 'Learn more →'}
+                      </a>
+                    </p>
+      {/if}
+
+      {#if total() > 1}
+        <nav class="slide-controls" aria-label="Slide controls">
+          <button class="ctrl-btn" type="button" on:click={prev} aria-label="Previous slide">←</button>
+          <div class="ctrl-indicator" aria-live="polite">{index + 1} / {total()}</div>
+          <button class="ctrl-btn" type="button" on:click={next} aria-label="Next slide">→</button>
+        </nav>
+      {/if}
+    </div>
 
 
+           
 
+            <!-- Gallery / Thumbs -->
             {#if p.images && p.images.length}
-              <!-- Thumbnails: 2×2; odd last centers on new row -->
               <div class="thumb-grid {p.images.length === 1 ? 'single' : ''}">
-                {#each p.images as img, i}
+                {#each p.images as img, j}
                   <button
                     class="thumb"
-                    aria-label={"Open image " + (i+1) + " of " + p.title}
-                    on:click={() => openLightbox(p.images, i)}
+                    aria-label={"Open image " + (j+1) + " of " + p.title}
+                    on:click={() => openLightbox(p.images, j)}
                     type="button"
                   >
                     <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
@@ -115,12 +124,6 @@
       {/each}
     </div>
   </div>
-
-  <!-- Carousel arrows -->
-  {#if total() > 1}
-    <button class="carousel-arrow left" on:click={prev} aria-label="Previous slide" type="button">‹</button>
-    <button class="carousel-arrow right" on:click={next} aria-label="Next slide" type="button">›</button>
-  {/if}
 </section>
 
 {#if lightboxOpen}
@@ -133,10 +136,8 @@
     on:click={closeLightbox}
     on:keydown={handleBackdropKey}
   >
-    <!-- stop inside clicks from closing -->
     <div class="lb-content" on:pointerdown|stopPropagation>
       <button class="lb-close" aria-label="Close image" on:click={closeLightbox} type="button">×</button>
-
       <img
         class="lb-image"
         src={lightboxImages[lightboxIndex].src}
@@ -155,7 +156,7 @@
     outline: none;
   }
   .track-wrapper {
-    overflow: hidden;            /* hide off-screen slides */
+    overflow: hidden;
     width: 100%;
     max-width: var(--max);
     margin: 0 auto;
@@ -166,10 +167,11 @@
     grid-auto-columns: 100%;
     transform: translateX(calc(var(--index) * -100%));
     transition: transform 320ms ease;
-    /* width: 100%;
-    max-width: none; */
   }
-  .slide { padding: 3rem 1rem; }
+
+  /* Adjusted padding for tighter vertical rhythm */
+  .slide { padding: 2rem 1rem 1.5rem; }
+
   .slide-inner {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
@@ -177,47 +179,87 @@
     align-items: start;
   }
 
-  /* ===== Typography (reverted weights) ===== */
+  /* ===== Typography ===== */
   .text {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300;            /* ← revert to your original light body */
+    font-weight: 300;
   }
   .text h3 {
     font-size: 1.6rem;
-    font-weight: 500;            /* ← revert to semi-bold heading as before */
+    font-weight: 500;
     margin: 0 0 1rem 0;
   }
   .text p {
-    margin: 0;
+    margin: 0 0 0.75rem 0;  /* consistent spacing instead of <br><br> */
     line-height: 1.6;
     max-width: 60ch;
-    font-weight: 300;            /* ensure copy remains light */
+    font-weight: 300;
     text-align: justify;
   }
-  
+
   .product-link a {
-    text-decoration: none;   /* no underline */
-    font-weight: 400;        /* stronger than normal (use 700 for boldest) */
-    color: inherit;          /* matches the surrounding text color */
+    text-decoration: none;
+    font-weight: 400;
+    color: inherit;
     transition: opacity 0.2s ease;
   }
+  .product-link a:hover { opacity: 0.8; }
 
-  .product-link a:hover {
-    opacity: 0.8;            /* subtle feedback on hover */
+  /* ===== Slide controls inside text ===== */
+  .text .slide-controls {
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 0;
   }
-  /* ===== Thumbnails (no borders) ===== */
+  /* Flat, text-only controls */
+.ctrl-btn {
+  justify-self: start;           /* keep your left/right alignment logic */
+  appearance: none;
+  background: transparent;       /* no background */
+  border: none;                  /* no border */
+  box-shadow: none;              /* no shadow */
+  border-radius: 0;              /* no pill shape */
+
+  padding: 0.25rem 0.5rem;       /* keep a decent hit area */
+  width: auto;                   /* shrink-wrap the arrow glyph */
+  height: auto;
+  cursor: pointer;
+
+  font-size: 1.25rem;            /* arrow size */
+  line-height: 1;
+  color: inherit;                /* match surrounding text color */
+}
+
+.ctrl-btn:hover { opacity: 0.75; }
+
+.ctrl-btn:focus { outline: none; }
+.ctrl-btn:focus-visible {
+  outline: 2px solid rgba(0, 102, 255, 0.65);
+  outline-offset: 3px;
+}
+
+  .ctrl-btn:last-child { justify-self: end; }
+  .ctrl-btn:focus-visible {
+    outline: 3px solid rgba(0, 102, 255, 0.6);
+    outline-offset: 2px;
+  }
+  .ctrl-indicator { font-size: 0.9rem; }
+
+  /* ===== Thumbnails ===== */
   .thumb-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 0.75rem;
-    justify-content: center;   /* center the overall grid */
-    justify-items: center;     /* center items within cells */
+    justify-content: center;
+    justify-items: center;
     align-items: start;
     width: 100%;
     max-width: 620px;
     margin: 0 auto;
   }
-  /* If odd count, center the last one on its own row */
   .thumb-grid > .thumb:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
@@ -232,62 +274,17 @@
     border-radius: 10px;
     overflow: hidden;
   }
-  .thumb:focus { outline: none; }
-  .thumb:focus-visible {
-    outline: 2px solid rgba(0, 102, 255, 0.65);
-    outline-offset: 3px;
-  }
   .thumb img {
     display: block;
     width: 100%;
     height: auto;
-    border: none;    /* remove any UA image borders */
-    outline: none;   /* prevent UA outlines */
     border-radius: 10px;
     transition: transform 180ms ease;
+    background-color: #eef1f2; /* unify PNGs with bg */
   }
   .thumb img:hover { transform: scale(1.03); }
 
-  /* ===== Carousel arrows (side-centered) ===== */
- /* ===== Carousel arrows (side-centered) ===== */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  border-radius: 999px;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  font-size: 1.6rem;
-  line-height: 1;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  z-index: 2; /* ensure above images but below text if needed */
-}
-
-/* Nudge arrows inward/outward relative to the max content width */
-.carousel-arrow.left {
-  left: calc((100vw - var(--max)) / 2 - 2.5rem);
-}
-.carousel-arrow.right {
-  right: calc((100vw - var(--max)) / 2 - 2.5rem);
-}
-
-/* Accessibility focus */
-.carousel-arrow:focus-visible {
-  outline: 3px solid rgba(0, 102, 255, 0.6);
-  outline-offset: 2px;
-}
-
-/* Mobile adjustments: keep arrows closer in */
-@media (max-width: 900px) {
-  .carousel-arrow.left  { left: 0.5rem; }
-  .carousel-arrow.right { right: 0.5rem; }
-}
-
-
-  /* ===== Lightbox (no arrows) ===== */
+  /* ===== Lightbox ===== */
   .lb-backdrop {
     position: fixed;
     inset: 0;
@@ -306,7 +303,7 @@
   }
   .lb-image {
     max-width: 100%;
-    max-height: 88vh;           /* cap to viewport height */
+    max-height: 88vh;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -330,10 +327,14 @@
 
   /* ===== Responsive ===== */
   @media (max-width: 900px) {
-    .slide-inner { grid-template-columns: 1fr; gap: 1.25rem; text-align: justify; }
+    .slide-inner {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      text-align: justify;
+    }
   }
   @media (max-width: 520px) {
-    .slide { padding:2rem var(--side-pad, 1rem); }
+    .slide { padding: 2rem 1rem 1.5rem; }
     .thumb-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); max-width: 520px; }
     .lb-close { top: 0.5rem; right: 0.5rem; }
   }
@@ -344,3 +345,4 @@
     .thumb img { transition: none; }
   }
 </style>
+
