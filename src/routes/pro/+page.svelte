@@ -47,7 +47,7 @@
       <div class="intro-text">
         <h1>Precision. Depth. Design. <em> Solypsa</em></h1>
         <h3>Solypsa Pro</h3>
-
+        <h4>USA distributor for NNNN loudspeakers and STST turntables</h4>
         <p>
           For performance spaces, studios, and touring engineers, Solypsa Pro and our partners deliver
           beautiful sound with uncompromising reliability. From horn-loaded systems with studio-grade accuracy, to compact solutions that tame difficult rooms, we build rigs that translate intent—night after night.
@@ -71,6 +71,10 @@
             Start a Solypsa Pro consultation →
           </a>
         </p>
+        <p class="cta">
+        Interested in becoming a HI-FI distribution partner? Please inquire
+        <a href="mailto:info@solypsa.com?subject=Partner%20Inquiry" style="font-weight:400; color: black; text-decoration: none;">here</a>.
+      </p>
       </div>
     </div>
 
