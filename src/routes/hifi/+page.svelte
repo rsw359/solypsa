@@ -104,11 +104,7 @@
 
 
       images: [
-        { src: '/custom1.jpg', alt: 'custom order' },
-        { src: '/custom2.jpg', alt: 'custom order' },
-        { src: '/custom3.jpg', alt: 'custom order' },
-        { src: '/custom4.jpg', alt: 'custom order' },
-        { src: '/custom5.jpg', alt: 'custom order' },
+        { src: '/dark1.png', alt: 'custom order' },
         
       ]
     },
@@ -144,7 +140,7 @@
         <a href="mailto:info@solypsa.com?subject=Partner%20Inquiry" style="font-weight:400; color: black; text-decoration: none;">here</a>.
       </p>
       
-      <p>For a list of our HI-FI partners click <a href="/partners" style="font-weight:400; color: black; text-decoration: none;" >here →</a></p>
+      <p>For more information on our lines, click <a href="mailto:info@solypsa.com?subject=Lines%20Inquiry" style="font-weight:400; color: black; text-decoration: none;" >here →</a></p>
 
     </div>
   </div>
@@ -176,7 +172,7 @@
     padding: 0 1rem;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
@@ -197,6 +193,7 @@
     margin: 0;
     max-width: 65ch;
     text-align: justify;
+    
   }
 
   .visually-hidden {
